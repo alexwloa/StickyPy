@@ -1,19 +1,27 @@
-print("Das ist ein Test")
-
 import threading
 from ctypes import *
 
 ok = windll.user32.BlockInput(True)  # enable block
-
-# or
-
 oks = windll.user32.BlockInput(False)  # disable block
 
 import keyboard
 from pynput.mouse import Controller
-from time import sleep
+import time
+import daemon
 
 
+# -------------------------------------------- Block -------------------------------------------- #
+# block all class
+def blockinput_start():
+    mouse = Controller()
+    global block_input_flag
+    for i in range(150):
+        keyboard.block_key(i)
+    while block_input_flag == 1:
+        mouse.position = (0, 0)
+
+
+# block input
 def blockinput():
     global block_input_flag
     block_input_flag = 1
@@ -22,16 +30,8 @@ def blockinput():
     print("[SUCCESS] Input blocked!")
 
 
-def blockinput_start():
-    mouse = Controller()
-    global block_input_flag
-    for i in range(150):
-        keyboard.block_key(i)
-    while block_input_flag == 1:
-       mouse.position = (0, 0)
-# das Problem die maus wird nicht entfernt
-
-
+# -------------------------------------------- Unblock -------------------------------------------- #
+# stop block
 def blockinput_stop():
     global block_input_flag
     for i in range(150):
@@ -39,13 +39,14 @@ def blockinput_stop():
     block_input_flag = 0
 
 
+# unblock input
 def unblock_input():
     blockinput_stop()
     print("[SUCCESS] Input unblocked!")
 
 
+# -------------------------------------------- Main -------------------------------------------- #
+# Variante 1
 blockinput()
-print("now blocking")
-sleep(10)
+time.sleep(10)
 unblock_input()
-print("now unblocking")
