@@ -23,7 +23,8 @@ Features
 ### This guide explains how to configure a USB stick to run the stickyPy prank. Please follow these steps:
 
   - Download the stickyPy.exe file.
-[![Download](https://img.shields.io/badge/Download-Latest%20Release-brightgreen)](https://github.com/alexwloa/StickPy/releases/latest/download/usb_script.exe)
+[![Download](https://img.shields.io/badge/Download-Latest%20Release-brightgreen)](https://github.com/alexwloa/StickyPy/releases/latest/download/usb_script.exe)
+
   - Download the Autorun.inf file.
 
 ### Stick Configuration
