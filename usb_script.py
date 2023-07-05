@@ -1,3 +1,4 @@
+import sys
 import threading
 from ctypes import *
 
@@ -7,8 +8,6 @@ oks = windll.user32.BlockInput(False)  # disable block
 import keyboard
 from pynput.mouse import Controller
 import time
-import daemon
-
 
 # -------------------------------------------- Block -------------------------------------------- #
 # block all class
@@ -50,3 +49,4 @@ def unblock_input():
 blockinput()
 time.sleep(10)
 unblock_input()
+sys.exit()
