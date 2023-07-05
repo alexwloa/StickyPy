@@ -3,6 +3,8 @@
 stickyPy is a fun Python project developed to play a prank on your friend. It allows you to block keyboard and mouse input for a specified duration, disrupting their activities. 🙈🔒
 Features
 
+### Note: Please be aware that I cannot guarantee the functionality of the stick configuration described below. Use it at your own risk.
+
 - Blocks keyboard input and mouse movements for a specified time.
 - Utilizes the BlockInput function from the windll.user32 library.
 
